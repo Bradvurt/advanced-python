@@ -1,0 +1,255 @@
+.venue-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #e2e8f0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.venue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #2563eb;
+}
+
+.venue-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.venue-card:hover::before {
+  opacity: 1;
+}
+
+.venue-header {
+  margin-bottom: 1rem;
+}
+
+.venue-name {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.venue-category {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.venue-score {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.score-bar {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.score-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #10b981;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Price indicator */
+.venue-price {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.price-indicator {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.price-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.price-dot.filled {
+  background: #10b981;
+}
+
+/* Rating stars */
+.venue-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.rating-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f59e0b;
+}
+
+.rating-count {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Quick info */
+.quick-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  font-size: 0.75rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #64748b;
+}
+
+.info-item::before {
+  font-size: 0.875rem;
+}
+
+.info-item.wifi::before { content: "📶"; }
+.info-item.parking::before { content: "🅿️"; }
+.info-item.outdoor::before { content: "🌳"; }
+.info-item.food::before { content: "🍴"; }
+.info-item.drinks::before { content: "🍸"; }
+
+/* Actions */
+.venue-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.view-details-button {
+  width: 100%;
+  padding: 0.625rem;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-details-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.view-details-button:active {
+  transform: translateY(0);
+}
+
+/* Venue badges */
+.venue-badges {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.badge {
+  font-size: 0.625rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.popular {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.new {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge.trending {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.badge.verified {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .venue-card {
+    padding: 1rem;
+  }
+  
+  .venue-name {
+    font-size: 1rem;
+  }
+  
+  .venue-score {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .score-bar {
+    width: 100%;
+  }
+  
+  .quick-info {
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta
+      name="description"
+      content="VenueBot - AI-powered personalized recommendations for entertainment venues and places to hang out"
+    />
+    <meta
+      name="keywords"
+      content="venue recommendations, entertainment, chatbot, AI, hangout spots"
+    />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://venuebot.example.com/" />
+    <meta property="og:title" content="VenueBot - Personalized Venue Recommendations" />
+    <meta property="og:description" content="AI-powered chatbot for personalized entertainment venue recommendations" />
+    <meta property="og:image" content="https://venuebot.example.com/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://venuebot.example.com/" />
+    <meta property="twitter:title" content="VenueBot - Personalized Venue Recommendations" />
+    <meta property="twitter:description" content="AI-powered chatbot for personalized entertainment venue recommendations" />
+    <meta property="twitter:image" content="https://venuebot.example.com/og-image.png" />
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="manifest.json" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>VenueBot - Personalized Venue Recommendations</title>
+    
+    <style>
+      /* Loading styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .loading-container {
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .logo {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #ffffff, #e2e8f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tagline {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        margin-bottom: 3rem;
+        font-weight: 300;
+      }
+
+      .loading-spinner {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #ffffff;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      .loading-text {
+        font-size: 1.1rem;
+        font-weight: 500;
+        opacity: 0.8;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+        text-align: left;
+      }
+
+      .feature {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .feature h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .feature p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          font-size: 2.5rem;
+        }
+        
+        .tagline {
+          font-size: 1rem;
+        }
+        
+        .features {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 1rem;
+        }
+        
+        .logo {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="
+        background: white;
+        color: #1e293b;
+        padding: 2rem;
+        border-radius: 12px;
+        max-width: 600px;
+        margin: 2rem auto;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      ">
+        <h1 style="color: #2563eb; margin-bottom: 1rem;">JavaScript is Required</h1>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          VenueBot requires JavaScript to function properly. Please enable JavaScript in your browser settings to continue.
+        </p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">
+          Our application uses React.js to provide a smooth, interactive experience for personalized venue recommendations.
+        </p>
+      </div>
+    </noscript>
+    
+    <div id="root">
+      <!-- Loading screen -->
+      <div class="loading-container">
+        <div class="loading-spinner">
+          <div class="logo">VenueBot</div>
+          <p class="tagline">Персональные рекомендации лучших мест с помощью AI</p>
+          <div class="spinner"></div>
+          <p class="loading-text">Анализируем ваши предпочтения...</p>
+        </div>
+        
+        <div class="features">
+          <div class="feature">
+            <h3>🤖 Умный чат-бот</h3>
+            <p>Общайтесь с ботом как с другом — он подберёт идеальные места именно под ваше настроение</p>
+          </div>
+          <div class="feature">
+            <h3>📍 Умный поиск</h3>
+            <p>Кафе для свидания, уютное место для работы или шумная вечеринка — найдётся всё за пару кликов</p>
+          </div>
+          <div class="feature">
+            <h3>⭐ Оценивайте и делитесь</h3>
+            <p>Читайте впечатления других и делитесь своими, помогая сообществу открывать новые классные места</p>
+          </div>
+          <div class="feature">
+            <h3>🔒 Конфиденциальность прежде всего</h3>
+            <p>Мы храним ваши предпочтения, как зеницу ока: данные только для того, чтобы удивлять вас классными рекомендациями</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Worker for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+              console.log('ServiceWorker registration successful');
+            }, function(err) {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
